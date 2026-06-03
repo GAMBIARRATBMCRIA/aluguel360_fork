@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-primary: #174852;
+  --color-primary-light: #2c626c;
+  --color-primary-foreground: #f8fafc;
+  --color-secondary: #35b2a5;
+  --color-secondary-hover: #2e9f93;
+  --color-secondary-foreground: #020617;
+  --color-background: #f9fafb;
+  --color-foreground: #020617;
+  --color-card: #ffffff;
+  --color-card-foreground: #020617;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #020617;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #f1f5f9;
+  --color-accent-foreground: #020617;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #174852;
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
