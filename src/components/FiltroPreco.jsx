@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 export function FiltroPreco() {
   return (
-    <Card className="w-72 p-5 border border-[#1A535C] rounded-lg font-medium">
+    <Card className="w-72 p-5 border border-gray-300 rounded-lg font-medium">
       <h2 className="text-[#1A535C] text-lg mb-4">
         Faixa de Preço
       </h2>

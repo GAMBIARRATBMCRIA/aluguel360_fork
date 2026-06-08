@@ -91,7 +91,7 @@ export function Layout() {
       </main>
 
       {/* FOOTER */}
-      {location.pathname !== "/resultados" && (
+      
       <footer className="bg-primary text-white pt-16 pb-6 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="flex flex-col">
@@ -131,7 +131,7 @@ export function Layout() {
           &copy; 2026 Aluguel360 - Todos os direitos reservados. Projeto acadêmico para fins educacionais.
         </div>
       </footer>
-      )}
+     
     </div>
   );
 }

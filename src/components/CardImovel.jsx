@@ -15,18 +15,19 @@ export function CardImovel({
   const [favorito, setFavorito] = useState(false);
 
   return (
-    <Card
-      className="
-        rounded-xl
-        border
-        overflow-hidden
-        shadow-md
-        hover:shadow-lg
-        transition-transform
-        duration-300
-        hover:-translate-y-1
-      "
-    >
+   <Card
+  className="
+    rounded-xl
+    overflow-hidden
+    hover:shadow-lg
+    transition-all
+    hover:-translate-y-1
+    duration-300
+    border-border
+    group
+    relative
+  "
+>
 
       <div className="relative h-64 overflow-hidden">
 
@@ -81,7 +82,7 @@ export function CardImovel({
         <h3 className="text-lg font-medium">
           {titulo}
         </h3>
-
+    
         <p className="text-sm text-gray-500 mt-2">
           {descricao}
         </p>
@@ -90,7 +91,7 @@ export function CardImovel({
           R$ {preco}
         </p>
 
-       <div className="flex gap-4 mt-4 text-sm text-gray-500">
+       <div className="flex gap-4 mt-4 text-sm text-muted-foreground border-b pb-4 mb-4">
         <div className="flex items-center gap-1">
             <Ruler className="w-4 h-4" />
              <span>{area}m²</span>

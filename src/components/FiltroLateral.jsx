@@ -2,9 +2,8 @@ import { Card } from "@/components/ui/card";
 
 export function FiltroLateral() {
   return (
-    <Card className="w-72 p-5 border border-[#1A535C] rounded-lg font-medium">
-
-      <h2 className=" text-lg mb-4">
+    <Card className="w-72 p-5 border border-gray-300 rounded-lg font-medium">
+      <h2 className="text-[#1A535C] text-lg mb-4">
         Tipo de imóvel
       </h2>
 
