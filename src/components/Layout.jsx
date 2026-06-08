@@ -1,9 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Search, LogIn } from "lucide-react";
+import { IconePerfil } from "../components/IconePerfil";
+import { IconeAnunciar } from "../components/IconeAnunciar";
+import { IconeNotificacao } from "../components/IconeNotificacao";
 
 export function Layout() {
+   const location = useLocation();
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* HEADER */}
@@ -35,23 +39,59 @@ export function Layout() {
               <Link to="/about" className="hover:text-foreground transition-colors">Sobre nós</Link>
             </nav>
           </div>
+        <div className="flex flex-col gap-2">
 
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">Cadastrar-se</Button>
-            <Button className="bg-primary hover:bg-primary-light text-white gap-2">
-              <LogIn className="w-4 h-4" /> Entrar
-            </Button>
-            <Button variant="outline" className="border-border text-foreground hover:text-secondary">Quero anunciar</Button>
-          </div>
-        </div>
-      </header>
+  {/* Primeira linha */}
+  <div className="flex items-center gap-4">
 
+    <Button
+      variant="ghost"
+      className="h-8 px-2 text-sm gap-2 text-foreground hover:text-secondary"
+    >
+      <IconeAnunciar />
+      Quero anunciar
+    </Button>
+
+      <Button
+        variant="outline"
+        className="h-7 px-2 text-xs gap-1 hover:text-secondary"
+      >
+        <IconePerfil />
+        Meu Perfil
+      </Button>
+
+  </div>
+
+  {/* Segunda linha */}
+  <div className="flex items-center gap-2 pl-2">
+
+    <Button
+      variant="ghost"
+      className="h-7 px-1 text-xs text-foreground hover:text-secondary"
+    >
+      Meus Anúncios
+    </Button>
+
+      <Button
+        variant="ghost"
+        className="h-7 px-1 text-xs gap-1 text-foreground hover:text-secondary"
+        >
+        <IconeNotificacao />
+          Minhas Notificações
+      </Button>
+
+  </div>
+
+</div>
+       </div>
+</header>
       {/* MAIN CONTENT */}
       <main className="flex-1 flex flex-col bg-background">
         <Outlet />
       </main>
 
       {/* FOOTER */}
+      {location.pathname !== "/resultados" && (
       <footer className="bg-primary text-white pt-16 pb-6 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="flex flex-col">
@@ -91,6 +131,7 @@ export function Layout() {
           &copy; 2026 Aluguel360 - Todos os direitos reservados. Projeto acadêmico para fins educacionais.
         </div>
       </footer>
+      )}
     </div>
   );
 }
