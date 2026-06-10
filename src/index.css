@@ -1,28 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'Outfit', sans-serif;
-  --color-primary: #174852;
-  --color-primary-light: #2c626c;
+  --color-primary: #1A535C;
+  --color-primary-light: #2F646C;
   --color-primary-foreground: #f8fafc;
-  --color-secondary: #35b2a5;
-  --color-secondary-hover: #2e9f93;
+  --color-secondary: #2C7E7B;
+  --color-secondary-hover: #1A535C;
   --color-secondary-foreground: #020617;
   --color-background: #f9fafb;
-  --color-foreground: #020617;
+  --color-foreground: #2D2D2D;
   --color-card: #ffffff;
-  --color-card-foreground: #020617;
+  --color-card-foreground: #2D2D2D;
   --color-popover: #ffffff;
-  --color-popover-foreground: #020617;
+  --color-popover-foreground: #2D2D2D;
   --color-muted: #f1f5f9;
   --color-muted-foreground: #64748b;
-  --color-accent: #f1f5f9;
-  --color-accent-foreground: #020617;
-  --color-destructive: #ef4444;
+  --color-accent: #F0F4F8;
+  --color-accent-foreground: #2D2D2D;
+  --color-destructive: #FF6B6B;
   --color-destructive-foreground: #f8fafc;
   --color-border: #e2e8f0;
   --color-input: #e2e8f0;
-  --color-ring: #174852;
+  --color-ring: #1A535C;
+  --color-action: #FF6B6B;
+  --color-action-foreground: #F0F4F8;
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
@@ -35,5 +38,23 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .auth-step-panel {
+    animation: auth-step-panel 260ms ease-out both;
+  }
+}
+
+@keyframes auth-step-panel {
+  from {
+    opacity: 0;
+    transform: translateX(18px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
 }
