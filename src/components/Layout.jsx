@@ -1,93 +1,84 @@
 import { Link, Outlet } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { MapPin, Search, LogIn } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { SiteHeader } from "./SiteHeader";
 
 export function Layout() {
+  const isAuthenticated = false;
+
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      {/* HEADER */}
-      <header className="bg-white border-b sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col">
-            <Link to="/" className="bg-secondary text-white px-4 py-1.5 rounded-full font-bold text-lg inline-block w-max mb-1">
-              Aluguel360
-            </Link>
-            <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <MapPin className="w-3 h-3" /> Informe o seu endereço
-            </span>
-          </div>
+    <div className="flex min-h-screen flex-col font-sans">
+      <SiteHeader isAuthenticated={isAuthenticated} />
 
-          <div className="flex flex-col items-center flex-1 max-w-2xl w-full">
-            <div className="flex w-full mb-3 shadow-sm rounded-md overflow-hidden border focus-within:ring-1 focus-within:ring-primary">
-              <Input 
-                type="text" 
-                placeholder="Busque por cidade, bairro ou tipo de imóvel..." 
-                className="border-0 shadow-none focus-visible:ring-0 rounded-r-none h-10 px-4"
-              />
-              <Button variant="ghost" size="icon" className="h-10 w-12 rounded-l-none border-l bg-white hover:bg-gray-50">
-                <Search className="w-5 h-5 text-gray-600" />
-              </Button>
-            </div>
-            <nav className="flex gap-8 text-sm text-muted-foreground">
-              <Link to="/" className="text-foreground font-medium">Página inicial</Link>
-              <Link to="/contact" className="hover:text-foreground transition-colors">Contate-nos</Link>
-              <Link to="/about" className="hover:text-foreground transition-colors">Sobre nós</Link>
-            </nav>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">Cadastrar-se</Button>
-            <Button className="bg-primary hover:bg-primary-light text-white gap-2">
-              <LogIn className="w-4 h-4" /> Entrar
-            </Button>
-            <Button variant="outline" className="border-border text-foreground hover:text-secondary">Quero anunciar</Button>
-          </div>
-        </div>
-      </header>
-
-      {/* MAIN CONTENT */}
-      <main className="flex-1 flex flex-col bg-background">
+      <main className="flex flex-1 flex-col bg-background">
         <Outlet />
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-primary text-white pt-16 pb-6 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <footer className="bg-primary px-6 pb-6 pt-16 text-white">
+        <div className="mx-auto mb-12 grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-4">
           <div className="flex flex-col">
-            <div className="bg-secondary text-white px-4 py-1.5 rounded-full font-bold text-lg inline-block w-max mb-6">
+            <div className="mb-6 inline-block w-max rounded-full bg-secondary px-4 py-1.5 text-lg font-bold text-white">
               Aluguel360
             </div>
-            <p className="text-sm opacity-80 mb-3">Uma plataforma simples e segura para anunciar e encontrar imóveis para aluguel.</p>
-            <p className="text-xs opacity-60">Nosso objetivo é padronizar anúncios, melhorar a qualidade das informações.</p>
-          </div>
-          
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-lg mb-2">Para usuário</h4>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Anunciar imóvel</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Buscar imóveis</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Como funciona</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Dicas para um bom anúncio</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Central de ajuda</Link>
+            <p className="mb-3 text-sm opacity-80">
+              Uma plataforma simples e segura para anunciar e encontrar imóveis para aluguel.
+            </p>
+            <p className="text-xs opacity-60">
+              Nosso objetivo é padronizar anúncios, melhorar a qualidade das informações.
+            </p>
           </div>
 
           <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-lg mb-2">Conta e segurança</h4>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Meu perfil</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Meus anúncios</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Privacidade e Dados</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Termos de uso</Link>
-            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">Política de privacidade</Link>
+            <h4 className="mb-2 text-lg font-semibold">Para usuário</h4>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Anunciar imóvel
+            </Link>
+            <Link to="/resultados" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Buscar imóveis
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Como funciona
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Dicas para um bom anúncio
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Central de ajuda
+            </Link>
           </div>
 
           <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-lg mb-2">Contato e suporte</h4>
-            <p className="text-sm opacity-80 flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5" /> suporte@aluguel360.com.br</p>
-            <p className="text-sm opacity-80 flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5" /> Atendimento segunda à sexta, das 9h às 18h</p>
-            <p className="text-sm opacity-80 flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5" /> Plataforma disponível em todo o Brasil</p>
+            <h4 className="mb-2 text-lg font-semibold">Conta e segurança</h4>
+            <Link to="/login" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Meu perfil
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Meus anúncios
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Privacidade e Dados
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Termos de uso
+            </Link>
+            <Link to="#" className="text-sm opacity-80 hover:opacity-100 hover:underline">
+              Política de privacidade
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <h4 className="mb-2 text-lg font-semibold">Contato e suporte</h4>
+            <p className="flex items-start gap-2 text-sm opacity-80">
+              <MapPin className="mt-0.5 h-4 w-4" /> suporte@aluguel360.com.br
+            </p>
+            <p className="flex items-start gap-2 text-sm opacity-80">
+              <MapPin className="mt-0.5 h-4 w-4" /> Atendimento segunda à sexta, das 9h às 18h
+            </p>
+            <p className="flex items-start gap-2 text-sm opacity-80">
+              <MapPin className="mt-0.5 h-4 w-4" /> Plataforma disponível em todo o Brasil
+            </p>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto text-center border-t border-white/10 pt-6 text-xs opacity-60">
+        <div className="mx-auto max-w-7xl border-t border-white/10 pt-6 text-center text-xs opacity-60">
           &copy; 2026 Aluguel360 - Todos os direitos reservados. Projeto acadêmico para fins educacionais.
         </div>
       </footer>
