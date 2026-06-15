@@ -7,8 +7,7 @@ export function About(){
 
             </h1>
             <p className="text-lg text-center text-gray-600 max-w-3x1 mx-auto mb-12">
-            O Aluguel360 nasc
-            eu com o objetivo de conectar proprietários e inquilinos de forma simples,rápida e segura , oferencendo uma experiêcia moderna na busca e divulgação de imóveis.
+            O Aluguel360 nasceu com o objetivo de conectar proprietários e inquilinos de forma simples,rápida e segura , oferencendo uma experiêcia moderna na busca e divulgação de imóveis.
 
             </p>
 
