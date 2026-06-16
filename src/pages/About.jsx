@@ -1,58 +1,75 @@
 export function About() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">
-        Sobre Nós
-      </h1>
+    <div className="bg-slate-50 min-h-screen">
+      {/* Hero */}
+      <section className="bg-[#356F75] text-white py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold mb-6">
+            Sobre o Aluguel360
+          </h1>
 
-      <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
-        O Aluguel360 nasceu com o objetivo de conectar proprietários e
-        inquilinos de forma simples, rápida e segura, oferecendo uma
-        experiência moderna na busca e divulgação de imóveis.
-      </p>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="border rounded-2xl p-6 shadow-sm">
-          <h2 className="text-xl font-semibold mb-3">
-            Nossa Missão
-          </h2>
-          <p className="text-gray-600">
-            Facilitar o processo de locação e busca de imóveis,
-            aproximando pessoas e oportunidades.
+          <p className="max-w-3xl mx-auto text-lg opacity-90">
+            Conectamos proprietários e inquilinos de forma simples,
+            rápida e segura, oferecendo uma experiência moderna na
+            busca e divulgação de imóveis.
           </p>
         </div>
+      </section>
 
-        <div className="border rounded-2xl p-6 shadow-sm">
-          <h2 className="text-xl font-semibold mb-3">
-            Nossa Visão
-          </h2>
-          <p className="text-gray-600">
-            Ser a principal plataforma digital para aluguel de imóveis,
-            oferecendo praticidade e confiança.
-          </p>
+      {/* Cards */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
+            <h2 className="text-2xl font-bold text-[#356F75] mb-4">
+              Nossa Missão
+            </h2>
+
+            <p className="text-gray-600">
+              Facilitar o processo de locação e busca de imóveis,
+              aproximando pessoas e oportunidades.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
+            <h2 className="text-2xl font-bold text-[#356F75] mb-4">
+              Nossa Visão
+            </h2>
+
+            <p className="text-gray-600">
+              Ser a principal plataforma digital para aluguel de
+              imóveis, oferecendo praticidade e confiança.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
+            <h2 className="text-2xl font-bold text-[#356F75] mb-4">
+              Nossos Valores
+            </h2>
+
+            <p className="text-gray-600">
+              Transparência, inovação, segurança e foco na experiência
+              do usuário.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="border rounded-2xl p-6 shadow-sm">
-          <h2 className="text-xl font-semibold mb-3">
-            Nossos Valores
+      {/* Destaque */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="bg-[#356F75] rounded-3xl text-white p-12 text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            Por que escolher o Aluguel360?
           </h2>
-          <p className="text-gray-600">
-            Transparência, inovação, segurança e foco na experiência do
-            usuário.
+
+          <p className="max-w-3xl mx-auto opacity-90 mb-8">
+            Reunimos tecnologia, praticidade e um catálogo
+            diversificado para ajudar você a encontrar o imóvel ideal.
           </p>
+
+          <button className="bg-[#58D4D2] hover:opacity-90 text-white px-8 py-3 rounded-xl font-semibold transition">
+            Explorar Imóveis
+          </button>
         </div>
-      </div>
-
-      <section className="mt-16 text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Por que escolher o Aluguel360?
-        </h2>
-
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Reunimos tecnologia, praticidade e um catálogo diversificado
-          para ajudar você a encontrar o imóvel ideal de forma rápida e
-          eficiente.
-        </p>
       </section>
     </div>
   );
