@@ -1,1 +1,0 @@
-APERTE ctrl + shift + p

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff, Globe, LogIn } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonForms } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 function Field({ label, type = "text", placeholder, className = "", ...props }) {
@@ -70,19 +70,23 @@ export function Login() {
             </div>
 
             <div className="flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:gap-5">
-              <Button
+              <ButtonForms
                 type="button"
-                asChild
-                variant="outline"
-                className="h-8 w-full rounded-[9px] bg-[#F0F4F8] px-5 font-['Poppins'] text-[14px] font-normal text-[#2D2D2D]/90 shadow-[0_0_2.5px_0_rgba(0,0,0,0.41)] hover:bg-[#CAEBEC] sm:w-[127px] sm:text-[16px]"
+                variant="danger"
+                className="w-full sm:w-[128px]"
               >
-                <Link to="/">Cancelar</Link>
-              </Button>
+                <Link to="/resultados">
+                Cancelar
+                </Link>
+              </ButtonForms>
 
-              <Button className="h-8 w-full rounded-[9px] bg-[#2F646C] px-5 font-['Poppins'] text-[14px] font-normal text-[#F0F4F8] shadow-[0_-1px_6.1px_0_rgba(0,0,0,0.31)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1A535C] sm:w-[128px] sm:text-[16px]">
-                <LogIn className="mr-2 h-[18px] w-[18px]" />
+              <ButtonForms
+                type="submit"
+                className="w-full sm:w-[128px]"
+              > 
                 Entrar
-              </Button>
+              </ButtonForms>
+             
             </div>
 
             <div className="flex items-center gap-3 text-[14px] text-[#515151] sm:text-[16px]">
@@ -91,14 +95,13 @@ export function Login() {
               <div className="h-px flex-1 bg-[#D8E1E7]" />
             </div>
 
-            <Button
+            <button
               type="button"
-              variant="outline"
               className="h-[56px] w-full rounded-[9px] border-[#4ECDC4] bg-[#4ECDC4] text-[16px] font-medium text-[#2D2D2D]/90 shadow-[0_1px_6.1px_0_rgba(0,0,0,0.41)] hover:bg-[#44c2b9] sm:text-[18px]"
             >
-              <Globe className="mr-2 h-5 w-5 text-[#2D2D2D]/90" />
+              <Globe className="mr-2 inline h-5 w-5 text-[#2D2D2D]/90" />
               Acessar com Google
-            </Button>
+            </button>
 
             <div className="space-y-2 text-[14px] text-[#2D2D2D] sm:text-[16px]">
               <Link to="#" className="block text-[#1A535C] underline decoration-[#1A535C]/30 underline-offset-4 hover:text-[#2F646C]">
