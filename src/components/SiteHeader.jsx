@@ -50,7 +50,7 @@ function SearchNavigation() {
         <Link to="/" className="transition-colors hover:text-primary">
           Página inicial
         </Link>
-        <Link to="/contact" className="transition-colors hover:text-primary">
+        <Link to="#footer" className="transition-colors hover:text-primary">
           Contate-nos
         </Link>
         <Link to="/about" className="transition-colors hover:text-primary">
