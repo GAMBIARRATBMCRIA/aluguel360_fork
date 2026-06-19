@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Heart, Star, SquareDashedBottomCode, BedDouble, MapPin, SlidersHorizontal, Image as ImageIcon, User, ListOrdered, BadgeCheck, Clock, PhoneCall, Pointer, Share2, LogIn } from "lucide-react";
+import { Link } from "react-router-dom";
+
+
 
 export function Home() {
   return (
@@ -150,9 +153,11 @@ export function Home() {
                 <Button variant="outline" className="border-white/40 bg-transparent hover:bg-white/10 text-white gap-2">
                   <LogIn className="w-4 h-4" /> Acessar minha conta
                 </Button>
-                <Button className="bg-secondary hover:bg-secondary-hover text-white">
-                  Ver mais sobre nós
-                </Button>
+                <Link to="/sobre">
+                    <Button className="bg-secondary hover:bg-secondary-hover text-white">
+                       Ver mais sobre nós
+                    </Button>
+                </Link>
               </div>
             </div>
           </section>
