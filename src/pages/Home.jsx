@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Heart, Star, SquareDashedBottomCode, BedDouble, MapPin, SlidersHorizontal, Image as ImageIcon, User, ListOrdered, BadgeCheck, Clock, PhoneCall, Pointer, Share2, LogIn } from "lucide-react";
-
+ 
 export function Home() {
   return (
     <>
