@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Heart, Star, SquareDashedBottomCode, BedDouble, MapPin, SlidersHorizontal, Image as ImageIcon, User, ListOrdered, BadgeCheck, Clock, PhoneCall, Pointer, Share2, LogIn } from "lucide-react";
- 
+
 export function Home() {
   return (
     <>
@@ -147,13 +147,15 @@ export function Home() {
                 Em poucos cliques você descobre imóveis, compara preços, e realiza seu primeiro contato.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="outline" className="border-white/40 bg-transparent hover:bg-white/10 text-white gap-2">
-                  <LogIn className="w-4 h-4" /> Acessar minha conta
-                </Button>
-                <Link to="/sobre">
-                    <Button className="bg-secondary hover:bg-secondary-hover text-white">
-                       Ver mais sobre nós
-                    </Button>
+                <Link to="/login">
+                  <Button variant="outline" className="border-white/40 bg-transparent hover:bg-white/10 text-white gap-2">
+                    <LogIn className="w-4 h-4" /> Acessar minha conta
+                  </Button>
+                </Link>
+                <Link to="/about">
+                  <Button className="bg-secondary hover:bg-secondary-hover text-white">
+                    Ver mais sobre nós
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -175,7 +177,9 @@ export function Home() {
                 <User className="w-10 h-10" />
               </div>
               <p className="text-muted-foreground text-sm mb-6 h-10">Aproveite ofertas e contate o proprietário</p>
-              <Button size="sm" className="bg-secondary hover:bg-secondary-hover text-white w-full">Acessar minha conta</Button>
+              <Link to="/login">
+                <Button size="sm" className="bg-secondary hover:bg-secondary-hover text-white w-full">Acessar minha conta</Button>
+              </Link>
             </div>
             <div className="p-8 border rounded-2xl hover:border-secondary transition-colors hover:-translate-y-1 duration-300">
               <h4 className="font-semibold text-lg mb-2">Nossas Categorias</h4>
@@ -209,9 +213,11 @@ export function Home() {
                 <Button className="bg-secondary hover:bg-secondary-hover text-white">
                   Anunciar meu imóvel
                 </Button>
-                <Button variant="outline" className="border-white/40 bg-transparent hover:bg-white/10 text-white gap-2">
-                  <LogIn className="w-4 h-4" /> Acessar minha conta
-                </Button>
+                <Link to="/login">
+                  <Button variant="outline" className="border-white/40 bg-transparent hover:bg-white/10 text-white gap-2">
+                    <LogIn className="w-4 h-4" /> Acessar minha conta
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="md:w-1/2 min-h-[300px]">
@@ -264,9 +270,11 @@ export function Home() {
                 <Button className="bg-secondary hover:bg-secondary-hover text-white px-6 py-6 text-base">
                   Anunciar meu imóvel
                 </Button>
-                <Button className="bg-primary hover:bg-primary-light text-white px-6 py-6 text-base">
-                  Encontrar um imóvel
-                </Button>
+                <Link to="/resultados">
+                  <Button className="bg-primary hover:bg-primary-light text-white px-6 py-6 text-base">
+                    Encontrar um imóvel
+                  </Button>
+                </Link>
               </div>
             </div>
           </section>
