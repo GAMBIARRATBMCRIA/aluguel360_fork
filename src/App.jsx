@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { ResultadosPesquisa } from "./pages/ResultadosPesquisa";
 import { CadastroUsuario } from "./pages/CadastroUsuario";
 import { Login } from "./pages/Login";
+import { About } from "./pages/About";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           {/* Futuramente, novas páginas serão adicionadas aqui */}
           <Route path="resultados" element={<ResultadosPesquisa />} />
           <Route path="contact" element={<div className="p-20 text-center text-xl">Contato (Em breve)</div>} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </Router>
