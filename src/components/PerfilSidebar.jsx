@@ -37,11 +37,10 @@ export function PerfilSidebar() {
           <Link
             key={path}
             to={path}
-            className={`flex items-center gap-2.5 rounded-md px-2 py-2 font-['Inter'] text-[13px] transition-all duration-200 ${
-              isActive(path)
+            className={`flex items-center gap-2.5 rounded-md px-2 py-2 font-['Inter'] text-[13px] transition-all duration-200 ${isActive(path)
                 ? "bg-[#CAEBEC] text-[#1A535C] font-semibold"
                 : "text-[#2D2D2D]/80 hover:bg-[#F0F4F8] hover:text-[#1A535C]"
-            }`}
+              }`}
           >
             <Icon className="h-4 w-4 shrink-0" />
             {label}

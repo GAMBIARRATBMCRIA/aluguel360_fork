@@ -2,6 +2,7 @@ import { PerfilHeader } from "../components/PerfilHeader";
 import { PerfilSidebar } from "../components/PerfilSidebar";
 import { PerfilCard } from "../components/PerfilCard";
 import { Edit } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const usuarioMock = {
   nome: "Fulano de Tal",
@@ -13,6 +14,19 @@ const usuarioMock = {
 
 export function Perfil() {
   return (
+
+    /*
+      const menuItems = [
+    { label: "Perfil", icon: User, path: "/perfil" },
+    { label: "Endereços", icon: MapPin, path: "/perfil/enderecos" },
+    { label: "Meus Imóveis", icon: Home, path: "/perfil/meus-imoveis" },
+    { label: "Meus Anúncios", icon: FileText, path: "/perfil/meus-anuncios" },
+    { label: "Fotos e Mídias", icon: ImageIcon, path: "/perfil/midia" },
+    { label: "Qualidade dos Anúncios", icon: Star, path: "/perfil/qualidade" },
+    { label: "Segurança", icon: Lock, path: "/perfil/seguranca" },
+    { label: "Configurações", icon: Settings, path: "/perfil/configuracoes" },
+  ];
+    */
     <div className="mx-auto w-full max-w-7xl px-4 py-8 lg:px-8">
       {/* Main Layout Grid */}
       <div className="grid gap-8 min-[1080px]:grid-cols-[200px_minmax(0,1fr)]">
@@ -68,11 +82,12 @@ export function Perfil() {
                   </p>
                 </div>
               </div>
-
-              <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
-                <Edit className="h-3.5 w-3.5" />
-                Gerenciar Endereços
-              </button>
+              <Link to="/perfil/enderecos">
+                <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
+                  <Edit className="h-3.5 w-3.5" />
+                  Gerenciar Endereços
+                </button>
+              </Link>
             </PerfilCard>
 
             {/* Segurança */}
@@ -94,10 +109,12 @@ export function Perfil() {
                   Permissão de localização: Ativada
                 </p>
               </div>
-              <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
-                <Edit className="h-3.5 w-3.5" />
-                Ver mais detalhes
-              </button>
+              <Link to="/perfil/seguranca">
+                <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
+                  <Edit className="h-3.5 w-3.5" />
+                  Ver mais detalhes
+                </button>
+              </Link>
             </PerfilCard>
 
             {/* LINHA 2 */}
@@ -120,15 +137,20 @@ export function Perfil() {
                   1 Alugado
                 </p>
               </div>
+
               <div className="flex flex-col gap-2">
-                <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition w-fit">
-                  <Edit className="h-3.5 w-3.5" />
-                  Gerenciar imóveis
-                </button>
-                <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition w-fit">
-                  <Edit className="h-3.5 w-3.5" />
-                  Gerenciar Anuncios
-                </button>
+                <Link to="/perfil/meus-imoveis">
+                  <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition w-fit">
+                    <Edit className="h-3.5 w-3.5" />
+                    Gerenciar imóveis
+                  </button>
+                </Link>
+                <Link to="/perfil/meus-anuncios">
+                  <button className="flex items-center gap-1.5 font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition w-fit">
+                    <Edit className="h-3.5 w-3.5" />
+                    Gerenciar Anuncios
+                  </button>
+                </Link>
               </div>
             </PerfilCard>
 
@@ -157,9 +179,11 @@ export function Perfil() {
                   </div>
                 </div>
               </div>
-              <button className="font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
-                Ver mais detalhes&gt;&gt;
-              </button>
+              <Link to="/perfil/qualidade">
+                <button className="font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
+                  Ver mais detalhes&gt;&gt;
+                </button>
+              </Link>
             </PerfilCard>
 
             {/* Privacidade */}
@@ -201,9 +225,11 @@ export function Perfil() {
                   3 vídeos enviados
                 </p>
               </div>
-              <button className="font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
-                Ver mais detalhes&gt;&gt;
-              </button>
+              <Link to="/perfil/midia">
+                <button className="font-['Inter'] text-[13px] text-[#1A535C] hover:text-[#2F646C] transition">
+                  Ver mais detalhes&gt;&gt;
+                </button>
+              </Link>
             </PerfilCard>
 
           </div>
